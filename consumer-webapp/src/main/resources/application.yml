@@ -1,0 +1,22 @@
+spring:
+  datasource:
+        url: jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf8
+        username: root
+        password:
+        driver-class-name: com.mysql.jdbc.Driver
+  profiles:
+    active:
+      - dubbo
+  dubbo:
+    base-package: com.yp.consumerserver
+    application:
+      name: yp-consumer
+      consumer:                    # 公用的消费者配置
+            lazy: true
+            timeout: 1000
+      organization:
+    protocol:
+      port: 20881  # 可选 性能调优 远程服务调用超时时间(毫秒) 1.0.16以上版本
+server:
+  port: 80
+
