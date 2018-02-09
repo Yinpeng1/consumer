@@ -1,6 +1,7 @@
 package com.yp.consumerserver;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.yp.apientity.Entity.User;
 import com.yp.apiservice.service.HelloService;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,9 @@ public class UseHello {
 
     public void add(){
         helloService.add();
+    }
+
+    public User getUser(String name){
+        return helloService.get(name);
     }
 }
